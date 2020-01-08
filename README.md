@@ -22,5 +22,12 @@
   4. Create Product Entity
       *define all colums as properties
       *annotate primary column with @ID
-  5. Create 
+  5. Create ProductRepo interfacce by extending CrudRepository interface
+     CrudRepository provided basic crud functionalities and internally extends Repository
+     
+  6. Service Layer or Controller Layer
+     Auto wire ProductRepo 
+     implement Create,Read,update,delete by calling methods in ProductRepo
+     *Technically ProductRepo does not contain any mathod, CRUD methods are extended from CRUD REPO
+     
 1.CURD 2.Generators 3.Spring Data Finder Methods 4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
