@@ -19,5 +19,8 @@
       
       After config , start application and try access H2 console(port will change based on your configuration)
       http://localhost:8080/h2-console use spring.datasource.url as jdbc url in console
-
+  4. Create Product Entity
+      *define all colums as properties
+      *annotate primary column with @ID
+  5. Create 
 1.CURD 2.Generators 3.Spring Data Finder Methods 4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
