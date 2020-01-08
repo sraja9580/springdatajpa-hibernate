@@ -30,4 +30,12 @@
      implement Create,Read,update,delete by calling methods in ProductRepo
      *Technically ProductRepo does not contain any mathod, CRUD methods are extended from CRUD REPO
      
+     input to test Create
+     {
+        "id": 100, //ID AUTO GENERATED IN OUR SCENARIO DONT NEED TO GIVE
+        "name": "One Plus",
+        "description": "Never Settle",
+        "price": 30000.0
+     }
+     
 1.CURD 2.Generators 3.Spring Data Finder Methods 4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
