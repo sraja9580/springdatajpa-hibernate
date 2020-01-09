@@ -79,9 +79,16 @@
         "price": 30000.0
      }
  ## 2.GENERATORS 
-    ### What is ID Generator?
+  ### What is ID Generator?
     The <generator> class is a sub-element of id. It is used to generate the unique identifier for the objects of persistent class. There are many generator classes defined in the Hibernate Framework.
 	
-	All the generator classes implements the org.hibernate.id.IdentifierGenerator interface. The application programmer may create one's own generator classes by implementing the IdentifierGenerator i
+	All the generator classes implements the org.hibernate.id.IdentifierGenerator interface. The application programmer may create one's own generator classes by implementing the IdentifierGenerator interface. Hibernate framework provides many built-in generator classes
+
+  ### Types of ID Generator Provided by JPA?
+  	Auto		--> Persistance provider(Hibernate) relay on underlying Database (identity , sequence or table based on database type) 
+	Identity	--> Persistance provider use Auto Increment field in table (Database takes care)
+	Sequence	--> Persistance provider use Will use Database Sequence
+	Table		--> Using special table, Persistance Provider will use the table , it generates the value and store it in given table
+	* Mysql dont support Sequence,vice versa ORACLE dont support 
  ## 11.HIBERNATE MAPPINGS    
   2.Generators 3.Spring Data Finder Methods 4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
