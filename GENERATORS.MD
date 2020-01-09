@@ -9,7 +9,7 @@ Auto	--> Persistance provider(Hibernate) relay on underlying Database (identity 
 Identity	--> Persistance provider use Auto Increment field in table (Database takes care)  <br/>
 Sequence	--> Persistance provider use Will use Database Sequence  <br/>
 Table	--> Using special table, Persistance Provider will use the table , it generates the value and store it in given table  <br/>
-* Mysql dont support Sequence,vice versa ORACLE dont support 
+* Mysql dont support Sequence,vice versa ORACLE dont support Auto Increment
 
 ## IDENTITY
 It is used with mysql where primary key is auto-incremented column. <br/>
