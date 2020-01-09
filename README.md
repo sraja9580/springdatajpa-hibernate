@@ -1,6 +1,6 @@
 # springdatajpa-hibernate
 ## 1. CURD
-  1. Create Project with following starters<br/>  
+  1. Create Project with following starters<br/>
      *DATA JPA<br/>
      *H2<br/>
      *LOMBOK<br/>
@@ -78,5 +78,5 @@
         "description": "Never Settle",
         "price": 30000.0
      }
-     
-1.CURD 2.Generators 3.Spring Data Finder Methods 4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
+ ## 11.HIBERNATE MAPPINGS    
+  2.Generators 3.Spring Data Finder Methods 4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
