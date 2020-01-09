@@ -1,10 +1,10 @@
 # springdatajpa-hibernate
 ## 1. CURD
   1. Create Project with following starters<br/>
-     *DATA JPA<br/>
-     *H2<br/>
-     *LOMBOK<br/>
-     *Spring Web<br/>
+     - DATA JPA<br/>
+     - H2<br/>
+     - LOMBOK<br/>
+     - Spring Web<br/>
      
   2. Add schema.sql file in resource folder <br/>
       create table product(id int PRIMARY KEY,name varchar(20),description varchar(100),price decimal(8,3));
@@ -97,10 +97,10 @@
     Add @GeneratedValue(strategy=GenerationType.IDENTITY) on primary key column to let Persistance provider know it is IDENTITY(Auto Generated.
     ** Steps: ** 
     1. Create Project with following starters
-     *DATA JPA
-     *H2
-     *LOMBOK
-     *Spring Web
+     - DATA JPA
+     - H2
+     - LOMBOK
+     - Spring Web
     
     2. Add schema.sql file in resource folder
       create table product(id int PRIMARY KEY,name varchar(20),description varchar(100),price decimal(8,3));
