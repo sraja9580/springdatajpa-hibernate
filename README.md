@@ -94,9 +94,8 @@
   ### IDENTITY
     It is used with mysql where primary key is auto-incremented column.
     Add @Id anotation on primary colum 
-    Add **@GeneratedValue(strategy=GenerationType.IDENTITY)** on primary key column to let Persistance provider know it is IDENTITY(Auto Generated.
-    
-   #### STEPS
+    Add @GeneratedValue(strategy=GenerationType.IDENTITY) on primary key column to let Persistance provider know it is IDENTITY(Auto Generated.
+    ** Steps: ** 
     1. Create Project with following starters
      *DATA JPA
      *H2
