@@ -5,10 +5,10 @@ The <generator> class is a sub-element of id. It is used to generate the unique 
 All the generator classes implements the org.hibernate.id.IdentifierGenerator interface. The application programmer may create one's own generator classes by implementing the IdentifierGenerator interface. Hibernate framework provides many built-in generator classes
 
 ## Types of ID Generator Provided by JPA?
-Auto	--> Persistance provider(Hibernate) relay on underlying Database (identity , sequence or table based on database type) 
-Identity	--> Persistance provider use Auto Increment field in table (Database takes care)
-Sequence	--> Persistance provider use Will use Database Sequence
-Table	--> Using special table, Persistance Provider will use the table , it generates the value and store it in given table
+Auto	--> Persistance provider(Hibernate) relay on underlying Database (identity , sequence or table based on database type)  <br/>
+Identity	--> Persistance provider use Auto Increment field in table (Database takes care)  <br/>
+Sequence	--> Persistance provider use Will use Database Sequence  <br/>
+Table	--> Using special table, Persistance Provider will use the table , it generates the value and store it in given table  <br/>
 * Mysql dont support Sequence,vice versa ORACLE dont support 
 
 ## IDENTITY
