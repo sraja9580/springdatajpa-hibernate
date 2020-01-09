@@ -12,9 +12,9 @@ Table	--> Using special table, Persistance Provider will use the table , it gene
 * Mysql dont support Sequence,vice versa ORACLE dont support 
 
 ## IDENTITY
-It is used with mysql where primary key is auto-incremented column.
-Add @Id anotation on primary colum 
-Add **@GeneratedValue(strategy=GenerationType.IDENTITY)** on primary key column to let Persistance provider know it is IDENTITY(Auto Generated.
+It is used with mysql where primary key is auto-incremented column. <br/>
+Add @Id anotation on primary colum  <br/>
+Add **@GeneratedValue(strategy=GenerationType.IDENTITY)** on primary key column to let Persistance provider know it is IDENTITY(Auto Generated. 
 
 **Steps:**
 1. Create Project with following starters<br/>
@@ -41,7 +41,7 @@ Add **@GeneratedValue(strategy=GenerationType.IDENTITY)** on primary key column 
       
   4. Create Product Entity <br/>
       *define all colums as properties <br/>
-      *annotate primary column with @ID <br/>
+      *annotate primary column with @ID and @GeneratedValue(strategy=GenerationType.IDENTITY) <br/>
       
   5. Create ProductRepo interfacce by extending CrudRepository interface <br/>
      CrudRepository provided basic crud functionalities and internally extends Repository
