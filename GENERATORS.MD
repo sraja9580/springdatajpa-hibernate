@@ -41,7 +41,7 @@ Add **@GeneratedValue(strategy=GenerationType.IDENTITY)** on primary key column 
       
   4. Create Product Entity <br/>
       *define all colums as properties <br/>
-      *annotate primary column with @ID and @GeneratedValue(strategy=GenerationType.IDENTITY) <br/>
+      *annotate primary column with @ID and **@GeneratedValue(strategy=GenerationType.IDENTITY)** <br/>
       
   5. Create ProductRepo interfacce by extending CrudRepository interface <br/>
      CrudRepository provided basic crud functionalities and internally extends Repository
