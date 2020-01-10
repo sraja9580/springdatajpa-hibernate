@@ -28,7 +28,7 @@ Add **@GeneratedValue(strategy=GenerationType.IDENTITY)** on primary key column 
       
   3. Configure H2 Database in application.properties <br/>
       #H2 Database <br/>
-      **Below MODE=MySQL; is used to run H2 in MYSQL mode**
+      **Below MODE=MySQL; is used to run H2 in MYSQL mode**  <br/>
       spring.datasource.url=jdbc:h2:mem:testdb;**MODE=MySQL;** <br/>
       spring.datasource.driverClassName=org.h2.Driver <br/>
       spring.datasource.username=sa <br/>
