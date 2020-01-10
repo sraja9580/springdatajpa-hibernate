@@ -1,6 +1,6 @@
 
 # Association Mapping
-## ONE-TO-ONE
+## ONE-TO-MANY
 <img src="images/one-to-many.GIF" alt="One to Many">
 
 ### Steps
