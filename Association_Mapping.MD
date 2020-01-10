@@ -15,14 +15,16 @@
       create table phone_number(id int PRIMARY KEY AUTO_INCREMENT,customer_id int,number varchar(20),type varchar(20), FOREIGN KEY (customer_id) REFERENCES customer(id) ); <br/>
       
   3. Configure H2 Database in application.properties <br/>
-      #H2 Database <br/>
-      spring.datasource.url=jdbc:h2:file:C:/projects/MavenTraining/restful-web-services/restful-web-services <br/>
+      **H2 Database** <br/> 
+      **MODE=MySQL** USED TO RUN H2 in MYSQL mode  <br/>
+      spring.datasource.url=jdbc:h2:mem:testdb;MODE=MySQL; <br/>
       spring.datasource.driverClassName=org.h2.Driver <br/>
       spring.datasource.username=sa <br/>
       spring.datasource.password= <br/>
       spring.jpa.database-platform=org.hibernate.dialect.H2Dialect <br/>
       spring.jpa.show-sql=true <br/>
       spring.h2.console.enabled=true <br/>
+
       
       After config , start application and try access H2 console(port will change based on your configuration)
       http://localhost:8080/h2-console use spring.datasource.url as jdbc url in console
