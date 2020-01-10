@@ -5,13 +5,14 @@
 
 ### Steps
 1. Create Project with following starters<br/>
-     - DATA JPA<br/>
-     - H2<br/>
-     - LOMBOK<br/>
-     - Spring Web<br/>
+     - DATA JPA <br/>
+     - H2 <br/>
+     - LOMBOK <br/>
+     - Spring Web <br/>
      
   2. Add schema.sql file in resource folder <br/>
-      create table product(id int PRIMARY KEY,name varchar(20),description varchar(100),price decimal(8,3));
+      create table customer(id int PRIMARY KEY AUTO_INCREMENT,name varchar(20)); <br/>
+      create table phone_number(id int PRIMARY KEY AUTO_INCREMENT,customer_id int,number varchar(20),type varchar(20), FOREIGN KEY (customer_id) REFERENCES customer(id) ); <br/>
       
   3. Configure H2 Database in application.properties <br/>
       #H2 Database <br/>
