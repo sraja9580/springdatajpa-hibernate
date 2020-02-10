@@ -1,9 +1,8 @@
 
-# Association Mapping
-## ONE-TO-MANY
+# ONE-TO-MANY
 <img src="images/one-to-many.GIF" alt="One to Many">
 
-### Steps
+## Steps
 1. Create Project with following starters<br/>
      - DATA JPA <br/>
      - H2 <br/>
