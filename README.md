@@ -1,4 +1,6 @@
-# springdatajpa-hibernate
+# DATA JPA
+* [CRUD](#crud)
+
 ## CRUD
 Data JPA provides **CrudRepository** for CRUD operations
 
