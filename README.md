@@ -1,5 +1,6 @@
 # DATA JPA
 * [CRUD](#crud)
+* [Generators](#generators)
 
 ## CRUD
 Data JPA provides **CrudRepository** for CRUD operations
@@ -19,6 +20,8 @@ public interface ProductRepo extends CrudRepository<Product,Integer> {
   * delete - productRepo.deleteById(1)
   * isExist - productRepo.existsById(1)
   * COUNT - productRepo.count()
-     
+  
+## Generators
+
  ## 11.HIBERNATE MAPPINGS    
   2.Generators 3.Spring Data Finder Methods 4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
