@@ -1,6 +1,7 @@
 # DATA JPA
 * [CRUD](#crud)
 * [Generators](#generators)
+* [Data Finder Methods](#data-finder-methods)
 
 ## CRUD
 Data JPA provides **CrudRepository** for CRUD operations
@@ -68,6 +69,8 @@ public class Item {
 }
 
 ```
+## Data Finder Methods
+agasgas
 
 
  ## 11.HIBERNATE MAPPINGS    
