@@ -49,18 +49,24 @@ public class Employee {
 }
 ```
 ### CUSTOM  [CUSTOM STATERGY](id-genertion-statergy/idgenerator-custom)
-The TableGenerator uses an underlying **database table** that holds segments of identifier generation values.
+If we don't want to use any of the out-of-the-box strategies,**we can define our custom generator by implementing the IdentifierGenerator interface**.
 ```
-@Entity
-public class Employee {
+public class CustomItomPrimaryKeyGenerator implements IdentifierGenerator {
+    @Override
+    public Serializable generate(SharedSessionContractImplementor session, Object object) throws HibernateException {
+        //Logic
+        return id;
+    }
+}
 
-    //create table id_gen(gen_name varchar(60) PRIMARY KEY,gen_val int(20))
-    @TableGenerator(name = "emp_pk_generator",table = "id_gen",pkColumnName = "gen_name",valueColumnName ="gen_val",allocationSize = 1)
-    
-    @GeneratedValue(strategy = GenerationType.TABLE,generator = "emp_pk_generator")
+@Entity
+public class Item {
+    @GenericGenerator(name = "emp_pk_generator",strategy = "CustomItomPrimaryKeyGenerator")
+    @GeneratedValue(generator = "emp_pk_generator")
     @Id
     private Integer id; 
 }
+
 ```
 
 
