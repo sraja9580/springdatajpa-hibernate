@@ -39,11 +39,14 @@ public class Product {
 The TableGenerator uses an underlying **database table** that holds segments of identifier generation values.
 ```
 @Entity
-public class Product {
-    #create table product( id int NOT NULL AUTO_INCREMENT,name varchar(20),description varchar(100),price decimal(8,3) , CONSTRAINT id_pk PRIMARY KEY (id));
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Employee {
+
+    //create table id_gen(gen_name varchar(60) PRIMARY KEY,gen_val int(20))
+    @TableGenerator(name = "emp_pk_generator",table = "id_gen",pkColumnName = "gen_name",valueColumnName ="gen_val",allocationSize = 1)
+    
+    @GeneratedValue(strategy = GenerationType.TABLE,generator = "emp_pk_generator")
     @Id
-    private Integer id;   
+    private Integer id; 
 }
 ```
 [TABLE STATERGY](id-genertion-statergy/idgenerator-table)
