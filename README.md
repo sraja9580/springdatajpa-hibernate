@@ -85,6 +85,78 @@ public interface ProductRepo extends CrudRepository<Product,Integer> {
 
 ```
 ##  [Paging and Sorting](id-genertion-statergy/idgenerator-custom)
-sasgsagsagasgf
+**PagingAndSortingRepository** extends **CrudRepo** and provides additional paging and shorting features.
+```
+public interface ProductRepo extends PagingAndSortingRepository<Product,Integer> {}
+
+@SpringBootTest
+class PagingAndShortingApplicationTests {
+
+	@Autowired
+	ProductRepo productRepo;
+
+	@Test
+	void contextLoads() {
+	}
+
+	@Test
+	void testPaging(){
+		System.out.println("testPaging START **********");
+		Pageable pageable = PageRequest.of(0,2);
+		productRepo.findAll(pageable).forEach(System.out::println);
+		System.out.println("testPaging END **********");
+	}
+
+	@Test
+	void testSorting(){
+		System.out.println("testSorting START **********");
+		productRepo.findAll(Sort.by(Sort.Direction.DESC,"productName")).forEach(System.out::println);
+		System.out.println("testSorting END **********");
+	}
+
+	@Test
+	void testSortByMultipeProperties(){
+		System.out.println("testSortByMultipeProperties START **********");
+		productRepo.findAll(Sort.by(Sort.Direction.DESC,"productName","price")).forEach(System.out::println);
+		System.out.println("testSortByMultipeProperties END **********");
+	}
+
+	@Test
+	void testSortByMultipePropertiesAndMultipleDirection(){
+		System.out.println("testSortByMultipePropertiesAndMultipleDirection START **********");
+		productRepo.findAll(Sort.by(Sort.Order.asc("productName"), Sort.Order.desc("price"))).forEach(System.out::println);
+		System.out.println("testSortByMultipePropertiesAndMultipleDirection END **********");
+	}
+
+	@Test
+	void testPagingAndSorting(){
+		System.out.println("testPagingAndSorting START **********");
+		System.out.println("PAGE 1");
+		Pageable pageable = PageRequest.of(0,3,Sort.by(Sort.Order.asc("productName"), Sort.Order.desc("price")));
+		productRepo.findAll(pageable).forEach(System.out::println);
+		System.out.println("PAGE 2");
+		pageable = PageRequest.of(1,3,Sort.by(Sort.Order.asc("productName"), Sort.Order.desc("price")));
+		productRepo.findAll(pageable).forEach(System.out::println);
+		System.out.println("testPagingAndSorting END **********");
+	}
+
+	@Test
+	void testCustomFinderPagingAndSorting(){
+		System.out.println("testCustomFinderPagingAndSorting START **********");
+		System.out.println("PAGE 1");
+		Pageable pageable = PageRequest.of(0,3,Sort.by(Sort.Order.asc("productName"), Sort.Order.desc("price")));
+		productRepo.findByPriceGreaterThan(8000d,pageable).forEach(System.out::println);
+		System.out.println("PAGE 2");
+		pageable = PageRequest.of(1,3,Sort.by(Sort.Order.asc("productName"), Sort.Order.desc("price")));
+		productRepo.findByPriceGreaterThan(8000d,pageable).forEach(System.out::println);
+		System.out.println("testCustomFinderPagingAndSorting END **********");
+	}
+}
+```
+**Paging and Sorting for Custom Finder Methods** <br>
+Add **Pageable** as parameter to CustomFinder Method to enable paging and soring
+```
+List<Product> findByPriceGreaterThan(Double price, Pageable pageable);
+```
  ## 11.HIBERNATE MAPPINGS    
   2.4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
