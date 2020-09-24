@@ -84,7 +84,7 @@ public interface ProductRepo extends CrudRepository<Product,Integer> {
 }
 
 ```
-##  [Paging and Sorting](id-genertion-statergy/idgenerator-custom)
+##  [Paging and Sorting](paging-sorting)
 **PagingAndSortingRepository** extends **CrudRepo** and provides additional paging and shorting features.
 ```
 public interface ProductRepo extends PagingAndSortingRepository<Product,Integer> {}
