@@ -158,5 +158,10 @@ Add **Pageable** as parameter to CustomFinder Method to enable paging and soring
 ```
 List<Product> findByPriceGreaterThan(Double price, Pageable pageable);
 ```
+
+##  [JPQA](jpql)
+Java Persistance Query Language.
+* Entity Class Name and Field Names are case sensitive
+* Key words (select,like) not case sensitive
  ## 11.HIBERNATE MAPPINGS    
   2.4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
