@@ -1,0 +1,15 @@
+create table product(
+id int NOT NULL AUTO_INCREMENT,
+name varchar(20),
+description varchar(100),
+price decimal(8,3) ,
+ CONSTRAINT id_pk PRIMARY KEY (id)
+);
+
+INSERT INTO `product` (`id`, `name`, `description`, `price`) VALUES 
+(NULL, 'Oneplus7', 'Never Settle', '28000'), 
+(NULL, 'Oneplus 3T', 'Flagship Killer', '22000'), 
+(NULL, 'Moto G9', 'last its mojo', '12000'), 
+(NULL, 'Realme C11', 'Value for money', '7500'),
+(NULL, 'iphone 11', 'for rich', '95000'), 
+(NULL, 'Galaxy M50', 'Biggest Battery', '19000');
