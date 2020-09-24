@@ -70,8 +70,7 @@ public class Item {
 
 ```
 ## Data Finder Methods
-agasgas
-
+Spring Data Jpa not only provides implementation for commonly used methods but also provides a way to add custom methods. The method signature tells Spring Data Jpa everything it needs to know in order to create an implementation for the method. Spring Data Jpa defines a sort of **domain-specific language (DSL)** wherepersistence details are expressed in *method signatures**
 
  ## 11.HIBERNATE MAPPINGS    
   2.Generators 3.Spring Data Finder Methods 4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
