@@ -163,6 +163,10 @@ List<Product> findByPriceGreaterThan(Double price, Pageable pageable);
 Java Persistance Query Language.
 * Entity Class Name and Field Names are case sensitive
 * Key words (select,like) not case sensitive
+* You just need to Define method and JPQL no implementation required
+* Use **@Query** to write JPQL query
+* Use **@Param** to map method parameter to named param in Query
+* Use **@Modifying** for DML , otherwise spring throws exception
 
 **Code Snipt**
 ```
