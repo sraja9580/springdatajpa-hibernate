@@ -210,14 +210,7 @@ class JpqlAndNativeSqlApplicationTests {
 		studentRepo.getAllStudentsPartialData().forEach(student-> System.out.println(student[0]+" "+student[1]+" "+student[2]));
 		System.out.println("************ getAllStudentsPartialData END ************");
 	}
-
-	@Test
-	void getAllStudentsWithLastName(){
-		System.out.println("************ getAllStudentsWithLastName START ************");
-		studentRepo.getAllStudentsWithLastName("SELVARAJ").forEach(System.out::println);
-		System.out.println("************ getAllStudentsWithLastName END ************");
-	}
-
+	 
 	@Test
 	void getAllStudentsBetweenScoreRange(){
 		System.out.println("************ getAllStudentsBetweenScoreRange START ************");
@@ -235,6 +228,26 @@ class JpqlAndNativeSqlApplicationTests {
 	}
 }
 
+```
+**Paging and Sorting for Custom Finder Methods** <br>
+Add **Pageable** as parameter to CustomFinder Method to enable paging and soring
+```
+@Query("from Student")
+List<Student> getAllStudentsWithPagingAndSorting(Pageable pageable);
+
+@Test
+void getAllStudentsWithPagingAndSorting(){
+	System.out.println("************ getAllStudentsWithPagingAndSorting START ************");
+	System.out.println("PAGE 1");
+	Pageable pageable = PageRequest.of(0,3,Sort.by(Sort.Order.desc("score"),Sort.Order.asc("firstName")));
+	studentRepo.getAllStudentsWithPagingAndSorting(pageable).forEach(System.out::println);
+
+	System.out.println("PAGE 2");
+	pageable = PageRequest.of(1,3,Sort.by(Sort.Order.desc("score"),Sort.Order.asc("firstName")));
+	studentRepo.getAllStudentsWithPagingAndSorting(pageable).forEach(System.out::println);
+
+	System.out.println("************ getAllStudentsWithPagingAndSorting END ************");
+}
 ```
  ## 11.HIBERNATE MAPPINGS    
   2.4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
