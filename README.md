@@ -163,5 +163,74 @@ List<Product> findByPriceGreaterThan(Double price, Pageable pageable);
 Java Persistance Query Language.
 * Entity Class Name and Field Names are case sensitive
 * Key words (select,like) not case sensitive
+
+**Code Snipt**
+```
+public interface StudentRepo  extends CrudRepository<Student,Integer> {
+    //IF YOU SELECT ALL THE COLUMN THEN IT GIVES STUDENT OBJECT OTHERWISE OBJECT ARRAY
+    @Query("from Student")
+    List<Student> getAllStudents();
+
+    @Query("select firstName,lastName,score from Student")
+    List<Object[]> getAllStudentsPartialData();
+
+    //NAMED QUERY
+    @Query("from Student where lastName=:lstName")
+    List<Student> getAllStudentsWithLastName(@Param("lstName") String lastName);
+
+    @Query("from Student where score>:minScore and score<:maxScore")
+    List<Student> getAllStudentsBetweenScoreRange(@Param("minScore") Integer min,@Param("maxScore") Integer max);
+
+    //NON SELECT OPERATION NEEDS @Modifying annotation, with out this spring wont consider it as DML and through exception
+    @Modifying
+    @Query("delete from Student where lastName=:lsName")
+    void deleteStudentByLastName(@Param("lsName") String lastName);
+}
+
+@SpringBootTest
+class JpqlAndNativeSqlApplicationTests {
+
+	@Autowired
+	StudentRepo studentRepo;	 
+
+	@Test
+	void testGetAllStudents(){
+		System.out.println("************ testGetAllStudents START ************");
+		studentRepo.getAllStudents().forEach(System.out::println);
+		System.out.println("************ testGetAllStudents END ************");
+	}
+
+	@Test
+	void getAllStudentsPartialData(){
+		System.out.println("************ getAllStudentsPartialData START ************");
+		studentRepo.getAllStudentsPartialData().forEach(student-> System.out.println(student[0]+" "+student[1]+" "+student[2]));
+		System.out.println("************ getAllStudentsPartialData END ************");
+	}
+
+	@Test
+	void getAllStudentsWithLastName(){
+		System.out.println("************ getAllStudentsWithLastName START ************");
+		studentRepo.getAllStudentsWithLastName("SELVARAJ").forEach(System.out::println);
+		System.out.println("************ getAllStudentsWithLastName END ************");
+	}
+
+	@Test
+	void getAllStudentsBetweenScoreRange(){
+		System.out.println("************ getAllStudentsBetweenScoreRange START ************");
+		studentRepo.getAllStudentsBetweenScoreRange(80,95).forEach(System.out::println);
+		System.out.println("************ getAllStudentsBetweenScoreRange END ************");
+	}
+
+	@Test
+	@Transactional //TO RUN DML
+	//@Rollback(false) //IN TEST SPRING REVERTS ALL DML OPERATION AFTER THE EXECUTION,IF YOU WANT TO REALY DELETE DATA THEN USE ROLLBACK FALSE
+	void testdeleteStudentByLastName(){
+		System.out.println("************ deleteStudentByLastName START ************");
+		studentRepo.deleteStudentByLastName("ASHOK");
+		System.out.println("************ deleteStudentByLastName END ************");
+	}
+}
+
+```
  ## 11.HIBERNATE MAPPINGS    
   2.4.Paging and Sorting 6.JPQL 7.Paging and Sorting JPQL 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
