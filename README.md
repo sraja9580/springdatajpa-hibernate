@@ -159,7 +159,7 @@ Add **Pageable** as parameter to CustomFinder Method to enable paging and soring
 List<Product> findByPriceGreaterThan(Double price, Pageable pageable);
 ```
 
-##  [JPQL](jpql)
+##  [JPQL](jpql-and-native-sql)
 Java Persistance Query Language.
 * Entity Class Name and Field Names are case sensitive
 * Key words (select,like) not case sensitive
@@ -250,7 +250,7 @@ void getAllStudentsWithPagingAndSorting(){
 	System.out.println("************ getAllStudentsWithPagingAndSorting END ************");
 }
 ```
-##  [NATIVE SQL](jpql) 
+##  [NATIVE SQL](jpql-and-native-sql) 
  
 * **NATIVE SQL supports DDL**
 * You just need to Define method and NATIVE SQL no implementation required
@@ -270,4 +270,4 @@ void testgetAllStudentsWithLastNameNativeQuery(){
 }    
 ```
  ## 11.HIBERNATE MAPPINGS    
-8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
+ 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
