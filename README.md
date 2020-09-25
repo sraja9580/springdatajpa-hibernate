@@ -159,10 +159,11 @@ Add **Pageable** as parameter to CustomFinder Method to enable paging and soring
 List<Product> findByPriceGreaterThan(Double price, Pageable pageable);
 ```
 
-##  [JPQA](jpql)
+##  [JPQL](jpql)
 Java Persistance Query Language.
 * Entity Class Name and Field Names are case sensitive
 * Key words (select,like) not case sensitive
+* **JPQL does not support DDL**
 * You just need to Define method and JPQL no implementation required
 * Use **@Query** to write JPQL query
 * Use **@Param** to map method parameter to named param in Query
@@ -248,6 +249,25 @@ void getAllStudentsWithPagingAndSorting(){
 
 	System.out.println("************ getAllStudentsWithPagingAndSorting END ************");
 }
+```
+##  [NATIVE SQL](jpql) 
+ 
+* **NATIVE SQL supports DDL**
+* You just need to Define method and NATIVE SQL no implementation required
+* Use **@Query** to write query and **nativeQuery = true**
+	**@Query(value = "select * from student where lname=:lastNme",nativeQuery = true)**
+* Use **@Param** to map method parameter to named param in Query
+
+```
+@Query(value = "select * from student where lname=:lastNme",nativeQuery = true)
+List<Student> getAllStudentsWithLastNameNativeQuery(@Param("lastNme") String lastName);
+
+@Test
+void testgetAllStudentsWithLastNameNativeQuery(){
+	System.out.println("************ testgetAllStudentsWithLastNameNativeQuery START ************");
+	studentRepo.getAllStudentsWithLastNameNativeQuery("SELVARAJ").forEach(System.out::println);
+	System.out.println("************ testgetAllStudentsWithLastNameNativeQuery END ************");
+}    
 ```
  ## 11.HIBERNATE MAPPINGS    
 8.NATIVE SQL 9.INHERITANCE MAPPING 10.COMPONENET MAPPING  11.HIBERNATE MAPPINGS 12.HIBERNATE CACHING 13.TRANSACTION MANAGEMENT
